@@ -1,0 +1,60 @@
+<% include partials/header.ejs %>
+<div class="container">
+    <% if (message) { %>
+        <p class="text-center text-danger"><%= message %></p>
+    <% } %>
+
+    <% if (player) { %>
+        <form class="add-player-form" action="" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="first-name">Nama Depan</label>
+                    <input type="text" class="form-control" name="first_name" id="first-name" value="<%= player.first_name %>" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="last-name">Nama Belakang</label>
+                    <input type="text" class="form-control" name="last_name" id="last-name" value="<%= player.last_name %>" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" name="username" id="username" value="<%= player.user_name %>" required disabled title="Username cannot be edited.">
+                </div>
+            </div>
+            <div class="form-row">
+                 <div class="form-group col-md-6">
+                    <label for="age">Usia</label>
+                    <input type="number" class="form-control" name="age" id="age" placeholder="Age" value="<%= player.age %>" required>
+                </div>
+                 <div class="form-group col-md-6">
+                    <label for="height">Tinggi Badan (cm)</label>
+                    <input type="number" class="form-control" name="height" id="height" placeholder="Height" value="<%= player.height %>" required>
+                </div>
+                 <div class="form-group col-md-6">
+                    <label for="weight">Berat Badan (kg)</label>
+                    <input type="number" class="form-control" name="weight" id="weight" placeholder="Weight" value="<%= player.weight %>" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="number">Nomor Punggung</label>
+                    <input type="number" class="form-control" name="number" id="number" placeholder="Number" value="<%= player.number %>" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="position">Position</label>
+                    <select id="position" name="position" class="form-control" required>
+                        <option selected><%= player.position %></option>
+                        <option>Point Guard</option>
+                        <option>Shooting Guard</option>
+                        <option>Small Forward</option>
+                        <option>Power Forward</option>
+                        <option>Center</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success float-right">Simpan Perubahan</button>
+        </form>
+    <% } else { %>
+        <p class="text-center">Tidak ada pemain yang ditemukan. Tekan <a href="/add">di sini</a> untuk menambah pemain.</p>
+    <% } %>
+</div>
+</div>
+</body>
+</html>
