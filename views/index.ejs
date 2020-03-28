@@ -1,7 +1,7 @@
 <% include partials/header.ejs %>
     <div class="table-wrapper">
         <% if (players.length > 0) {%>
-            <table class="table table-hovered">
+            <table class="table table-hovered text-center">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">ID</th>
@@ -20,17 +20,17 @@
                 <tbody>
                     <% players.forEach((player, index) => { %>
                         <tr>
-                            <th scope="row"><%= player.id %></th>
-                            <td><img src="/assets/img/<%= player.image %>" class="rounded-circle player-img" alt=""></td>
-                            <td><%= player.first_name %></td>
-                            <td><%= player.last_name %></td>
-                            <td><%= player.age %></td>
-                            <td><%= player.height %> cm</td>
-                            <td><%= player.weight %> kg</td>
-                            <td><%= player.position %></td>
-                            <td><%= player.number %></td>
-                            <td>@<%= player.user_name %></td>
-                            <td>
+                            <th class="align-middle" scope="row"><%= player.id %></th>
+                            <td class="align-middle"><img src="/assets/img/<%= player.image %>" class="rounded-circle player-img" alt=""></td>
+                            <td class="align-middle"><%= player.first_name %></td>
+                            <td class="align-middle"><%= player.last_name %></td>
+                            <td class="align-middle"><%= player.age %></td>
+                            <td class="align-middle"><%= player.height %> cm</td>
+                            <td class="align-middle"><%= player.weight %> kg</td>
+                            <td class="align-middle"><%= player.position %></td>
+                            <td class="align-middle"><%= player.number %></td>
+                            <td class="align-middle">@<%= player.user_name %></td>
+                            <td class="align-middle">
                                 <a href="/edit/<%= player.id %>" class="btn btn-sm btn-success">Ubah</a>
                                 <a href="/delete/<%= player.id %>" class="btn btn-sm btn-danger">Hapus</a>
                             </td>
